@@ -1,0 +1,85 @@
+@import "../../../themes/vars";
+
+@showItems: show-items;
+.home-content {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+  text-align: center;
+  & h1 {
+    font-weight: lighter; //字体的粗细，更细
+    color: @text-color-dark;
+    font-size: 36px;
+  }
+  & h2 {
+    font-weight: normal;
+    font-size: 20px;
+  }
+  & p {
+    margin: 10px auto;
+    font-size: 20px;
+  }
+  & .page-text {
+    margin: 40px auto 0;
+  }
+}
+
+.@{showItems} {
+  padding-top: 1px;
+  position: relative;
+  width: 95%;
+  margin: auto;
+  .home-anim-demo {
+    margin-top: 50px;
+    float: left;
+    width: 100%;
+    & ul li {
+      float: left;
+      width: 30%;
+      background: @page-bg-color;
+      height: 360px;
+      box-shadow: 0 10px 16px fade(#000, 10);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 60px;
+      &:nth-child(3n+2) { //指定父元素下标匹配第2,5,8...个子元素
+        margin: 0 5%;
+      }
+      & h2 {
+        color: #666;
+        margin: 15px;
+      }
+      & .home-anim-demo-text {
+        padding: 0 10%;
+        & p {
+          line-height: 18px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.news-button {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .@{showItems}  {
+    width: 90%;
+    .page-text {
+      width: 100%;
+    }
+    .home-anim-demo {
+      top: 160px;
+      ul li {
+        width: 100%;
+        margin: 0 auto 40px !important;
+      }
+    }
+  }
+}
